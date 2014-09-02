@@ -31,4 +31,8 @@ If the device is unsupported or an unrelated error with the keychain is returned
 
 Installation
 -
-Just copy the category from the `Soruce/` directory into your project an import `Security.Framework`
+**Cocoapods:**
+ `pod 'UIDevice-PasscodeStatus', '~> 0.0'`
+
+**Manually:**
+Just copy the category from the `Source/` directory into your project an import `Security.Framework`
