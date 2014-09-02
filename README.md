@@ -35,4 +35,4 @@ Installation
  `pod 'UIDevice-PasscodeStatus', '~> 0.0'`
 
 **Manually:**  
- Just copy the category from the `Source/` directory into your project an import `Security.Framework`
+ Just copy the category from the `Source/` directory into your project and import `Security.Framework`
