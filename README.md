@@ -24,10 +24,10 @@ The documentation states the following:
          without a passcode.** Disabling the device passcode will cause all 
          items in this class to be deleted.
          
-Because of this, an error is returned when you attempt to add or read an item in the keychain with this level of accessControl. If we see this error, the `passcodeStatus` returns as `UIDevicePasscodeStatusDisabled`.
-If we can successfully read or write to the keychain with this level of accessControl then we return `UIDevicePasscodeStatusEnabled`.
+Because of this, an error is returned when you attempt to add or read an item in the keychain with this level of accessControl. If we see this error, the `passcodeStatus` returns as `LNPasscodeStatusDisabled`.
+If we can successfully read or write to the keychain with this level of accessControl then we return `LNPasscodeStatusEnabled`.
 
-If the device is unsupported or an unrelated error with the keychain is returned, we return `UIDevicePasscodeStatusUnknown`.
+If the device is unsupported or an unrelated error with the keychain is returned, we return `LNPasscodeStatusUnknown`.
 
 Installation
 -
