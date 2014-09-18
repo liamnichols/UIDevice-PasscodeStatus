@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, UIDevicePasscodeStatus){
+typedef NS_ENUM(NSUInteger, LNPasscodeStatus){
     /* The passcode status was unknown */
-    UIDevicePasscodeStatusUnknown   = 0,
+    LNPasscodeStatusUnknown   = 0,
     /* The passcode is enabled */
-    UIDevicePasscodeStatusEnabled   = 1,
+    LNPasscodeStatusEnabled   = 1,
     /* The passcode is disabled */
-    UIDevicePasscodeStatusDisabled  = 2
+    LNPasscodeStatusDisabled  = 2
 };
 
 @interface UIDevice (PasscodeStatus)
@@ -26,8 +26,8 @@ typedef NS_ENUM(NSUInteger, UIDevicePasscodeStatus){
 
 /**
  *  Checks and returns the devices current passcode status.
- *  If `passcodeStatusSupported` returns NO then `UIDevicePasscodeStatusUnknown` will be returned.
+ *  If `passcodeStatusSupported` returns NO then `LNPasscodeStatusUnknown` will be returned.
  */
-@property (readonly) UIDevicePasscodeStatus passcodeStatus;
+@property (readonly) LNPasscodeStatus passcodeStatus;
 
 @end

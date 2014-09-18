@@ -37,19 +37,19 @@
 
 - (void)checkPasscodeState
 {
-    UIDevicePasscodeStatus status = [UIDevice currentDevice].passcodeStatus;
+    LNPasscodeStatus status = [UIDevice currentDevice].passcodeStatus;
     switch (status) {
-        case UIDevicePasscodeStatusEnabled:
+        case LNPasscodeStatusEnabled:
             self.view.backgroundColor = [UIColor greenColor];
             self.statusLabel.text = @"Passcode Enabled";
             break;
             
-        case UIDevicePasscodeStatusDisabled:
+        case LNPasscodeStatusDisabled:
             self.view.backgroundColor = [UIColor redColor];
             self.statusLabel.text = @"Passcode Disabled";
             break;
             
-        case UIDevicePasscodeStatusUnknown:
+        case LNPasscodeStatusUnknown:
         default:
             self.view.backgroundColor = [UIColor lightGrayColor];
             self.statusLabel.text = @"Unable to determine passcode state";
