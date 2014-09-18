@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   s.name         = "UIDevice-PasscodeStatus"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A UIDevice category to determine if the passcode is currently set on the device or not."
 
 
@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.source       = { :git => "https://github.com/liamnichols/UIDevice-PasscodeStatus.git", :commit => "f94cf0e0008d977be07738c64b141a142311b5d1" }
+  s.source       = { :git => 'https://github.com/liamnichols/UIDevice-PasscodeStatus.git', :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
