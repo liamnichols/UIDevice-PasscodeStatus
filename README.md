@@ -32,7 +32,7 @@ If the device is unsupported or an unrelated error with the keychain is returned
 Installation
 -
 **Cocoapods:**  
- `pod 'UIDevice-PasscodeStatus', '~> 0.0'`
+ `pod 'UIDevice-PasscodeStatus', '~> 0.0.2'`
 
 **Manually:**  
  Just copy the category from the `Source/` directory into your project and import `Security.Framework`
