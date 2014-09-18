@@ -20,8 +20,11 @@ NSString * const UIDevicePasscodeKeychainAccount = @"UIDevice-PasscodeStatus_Key
     return NO;
 #endif
     
+#ifdef __IPHONE_8_0
     return (&kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly != NULL);
-    
+#else
+    return NO;
+#endif
 }
 
 - (UIDevicePasscodeStatus)passcodeStatus
@@ -31,6 +34,7 @@ NSString * const UIDevicePasscodeKeychainAccount = @"UIDevice-PasscodeStatus_Key
     return UIDevicePasscodeStatusUnknown;
 #endif
     
+#ifdef __IPHONE_8_0
     if (&kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly != NULL) {
         
         static NSData *password = nil;
@@ -40,11 +44,11 @@ NSString * const UIDevicePasscodeKeychainAccount = @"UIDevice-PasscodeStatus_Key
         });
         
         NSDictionary *query = @{
-                                (__bridge id)kSecClass: (__bridge id)kSecClassGenericPassword,
-                                (__bridge id)kSecAttrService: UIDevicePasscodeKeychainService,
-                                (__bridge id)kSecAttrAccount: UIDevicePasscodeKeychainAccount,
-                                (__bridge id)kSecReturnData: @YES,
-                                };
+            (__bridge id)kSecClass: (__bridge id)kSecClassGenericPassword,
+            (__bridge id)kSecAttrService: UIDevicePasscodeKeychainService,
+            (__bridge id)kSecAttrAccount: UIDevicePasscodeKeychainAccount,
+            (__bridge id)kSecReturnData: @YES,
+        };
         
         CFErrorRef sacError = NULL;
         SecAccessControlRef sacObject;
@@ -78,10 +82,12 @@ NSString * const UIDevicePasscodeKeychainAccount = @"UIDevice-PasscodeStatus_Key
         // not sure what happened, returning unknown
         return UIDevicePasscodeStatusUnknown;
         
-    }
-    else{
+    } else {
         return UIDevicePasscodeStatusUnknown;
     }
+#else
+    return UIDevicePasscodeStatusUnknown;
+#endif
 }
 
 @end
