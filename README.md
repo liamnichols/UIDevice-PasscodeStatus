@@ -31,7 +31,7 @@ If the device is unsupported or an unrelated error with the keychain is returned
 
 Installation
 -
-**Cocoapods:**  
+**CocoaPods:**  
  `pod 'UIDevice-PasscodeStatus', '~> 0.0.2'`
 
 **Manually:**  
