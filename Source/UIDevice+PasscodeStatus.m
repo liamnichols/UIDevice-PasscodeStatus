@@ -68,7 +68,7 @@ NSString * const UIDevicePasscodeKeychainAccount = @"UIDevice-PasscodeStatus_Key
         status = SecItemAdd((__bridge CFDictionaryRef)setQuery, NULL);
         
         // if it failed to add the item.
-        if (status == errSecDecode) {
+        if (status == errSecDecode || status == errSecAuthFailed) {
             return LNPasscodeStatusDisabled;
         }
         
