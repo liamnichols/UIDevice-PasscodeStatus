@@ -67,8 +67,10 @@ NSString * const UIDevicePasscodeKeychainAccount = @"UIDevice-PasscodeStatus_Key
         OSStatus status;
         status = SecItemAdd((__bridge CFDictionaryRef)setQuery, NULL);
         
+        // if we have the object, release it.
         if (sacObject) {
-            CFRelease(sacObject), sacObject = NULL;
+            CFRelease(sacObject);
+            sacObject = NULL;
         }
         // if it failed to add the item.
         if (status == errSecDecode) {
