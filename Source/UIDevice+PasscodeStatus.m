@@ -61,8 +61,8 @@ NSString * const UIDevicePasscodeKeychainAccount = @"UIDevice-PasscodeStatus_Key
         
         
         NSMutableDictionary *setQuery = [query mutableCopy];
-        [setQuery setObject:password forKey:(__bridge id)kSecValueData];
-        [setQuery setObject:(__bridge id)sacObject forKey:(__bridge id)kSecAttrAccessControl];
+        setQuery[(__bridge id) kSecValueData] = password;
+        setQuery[(__bridge id) kSecAttrAccessControl] = (__bridge id) sacObject;
         
         OSStatus status;
         status = SecItemAdd((__bridge CFDictionaryRef)setQuery, NULL);
