@@ -1,6 +1,14 @@
 UIDevice-PasscodeStatus
 =======================
 
+# Update
+
+As of iOS 9, you can achieve this using the `LocalAuthentication.framework`. If targeting iOS 9+ read the comments [here][1] or look at [this answer][2].
+
+If you still need to target iOS 8 then continue reading :)
+
+---------- 
+
 A UIDevice category to determine if the passcode is currently set on the device or not.
 
 Requirements
@@ -36,3 +44,8 @@ Installation
 
 **Manually:**  
  Just copy the category from the `Source/` directory into your project and import `Security.Framework`
+ 
+ 
+ 
+   [1]: https://github.com/liamnichols/UIDevice-PasscodeStatus/issues/3#issuecomment-190294010
+   [2]: http://stackoverflow.com/a/36708769/814389
