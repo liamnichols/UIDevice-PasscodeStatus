@@ -73,7 +73,7 @@ NSString * const UIDevicePasscodeKeychainAccount = @"UIDevice-PasscodeStatus_Key
             sacObject = NULL;
         }
         // if it failed to add the item.
-        if (status == errSecDecode) {
+        if (status == errSecDecode || status == errSecAuthFailed) {
             return LNPasscodeStatusDisabled;
         }
         
